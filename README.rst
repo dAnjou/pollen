@@ -36,7 +36,7 @@ It can also store instances of already existing objects.
     pollen = Pollen()
     pollen.register('foo', f)
 
-    assert c.get('foo') == f
+    assert pollen.get('foo') == f
 
 **Note** all values registered directly are treated as *shared*, this means
 that every change made to such value will also change value in container.
@@ -47,7 +47,7 @@ that every change made to such value will also change value in container.
     pollen.register('foo', [])
     pollen.get('foo').append(1)
 
-    assert c.get('foo') == [1]
+    assert pollen.get('foo') == [1]
 
 
 Factories
